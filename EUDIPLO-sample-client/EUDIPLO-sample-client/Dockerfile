@@ -12,8 +12,8 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["EUDIPLO-sample-client/EUDIPLO-sample-client.csproj", "EUDIPLO-sample-client/"]
-RUN dotnet restore "./EUDIPLO-sample-client/EUDIPLO-sample-client.csproj"
+COPY ["EUDIPLO-sample-client.csproj", "EUDIPLO-sample-client/"]
+RUN dotnet restore "./EUDIPLO-sample-client.csproj"
 COPY . .
 WORKDIR "/src/EUDIPLO-sample-client"
 RUN dotnet build "./EUDIPLO-sample-client.csproj" -c $BUILD_CONFIGURATION -o /app/build
