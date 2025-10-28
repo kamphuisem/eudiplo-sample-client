@@ -46,7 +46,7 @@ jobs:
       - name: Build container and export to local Docker
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./EUDIPLO-sample-client/EUDIPLO-sample-client
           load: true
           tags: local/eudiplo-sample-client:scan
           cache-from: type=gha
