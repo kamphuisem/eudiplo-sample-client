@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Select an issuance configuration to create a credential offer.</p>
+</div>
+
+<div>
+  <h2>Authorization Code flow</h2>
+  <p>Create a credential offer using the Authorization Code flow, with the properties as descibed below it.</p>
+  <br/>
+  <a href="/Issuance/CredentialOffer?issuanceConfigurationId=employee-static-auth">Get offer</a>
+  <ul>
+    <li>EntraID credential</li>
+    <li>Static data</li>
+    <li>Key Binding: disabled</li>
+    <li>Batch-size: 10</li>
+    <li>DPoP required: no</li>
+  </ul>
+</div>
