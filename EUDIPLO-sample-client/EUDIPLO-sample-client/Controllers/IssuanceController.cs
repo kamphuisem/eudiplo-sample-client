@@ -6,7 +6,26 @@ namespace EUDIPLO_sample_client.Controllers;
 
 public class IssuanceController : Controller
 {
-	private RestClient _client = new();
+	private readonly RestClient _client = new();
+
+	public IActionResult GetCredentialOffer(string issuanceConfigurationId)
+	{
+		var authUrl = Environment.GetEnvironmentVariable("AuthUrl") ?? "";
+		var clientId = Environment.GetEnvironmentVariable("IssuerClientId") ?? "";
+		var clientSecret = Environment.GetEnvironmentVariable("IssuerClientSecret") ?? "";
+
+		var accessToken = GetAccessToken(authUrl, clientId, clientSecret);
+		string? offer = null;
+		if (accessToken != null)
+		{
+			offer = GetCredentialOffer(accessToken, issuanceConfigurationId);
+		}
+
+		return Ok(new
+		{
+			offer,
+		});
+	}
 
 	public IActionResult CredentialOffer(string issuanceConfigurationId)
 	{
