@@ -10,7 +10,6 @@
 <div>
   <h2>Authorization Code flow</h2>
   <p>Create a credential offer using the Authorization Code flow, with the properties as descibed below it.</p>
-  <br/>
   <a href="/Issuance/CredentialOffer?issuanceConfigurationId=employee-static-auth">Get offer</a>
   <ul>
     <li>EntraID credential</li>
@@ -19,4 +18,17 @@
     <li>Batch-size: 10</li>
     <li>DPoP required: no</li>
   </ul>
+</div>
+<br />
+<div>
+    <h2>Pre-Authorized Code flow</h2>
+    <p>Create a credential offer using the Pre-Authorized Code flow, with the properties as descibed below it.</p>
+    <a href="/Issuance/CredentialOffer?issuanceConfigurationId=employee-static-no-auth">Get offer</a>
+    <ul>
+        <li>EntraID credential</li>
+        <li>Static data</li>
+        <li>Key Binding: disabled</li>
+        <li>Batch-size: 10</li>
+        <li>DPoP required: no</li>
+    </ul>
 </div>
